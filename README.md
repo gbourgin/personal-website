@@ -22,6 +22,33 @@ If you want to manage your website in a local web development environment, you'l
 
 Once you've found a home for your forked repository, **[clone it](https://help.github.com/articles/cloning-a-repository/)**.
 
+#### Install Jekyll on WSL
+
+1. Update packages
+```
+sudo apt update && sudo apt upgrade -y
+```
+2. Install Ruby
+```
+sudo apt-get install -y ruby-full build-essential zlib1g-dev
+```
+3. Set Ruby in PATH
+```
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+4. Install Bundler
+```
+gem install bundler
+```
+5. Install Jekyll
+Check version compatible with github-pages : [Dependency versions](https://pages.github.com/versions/)
+```
+gem install jekyll --version 3.9.0
+```
+
 #### Install Jekyll
 
 Jekyll is a [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) that can be installed on most systems.
